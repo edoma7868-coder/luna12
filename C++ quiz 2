@@ -1,0 +1,110 @@
+#include <iostream>
+using namespace std;
+
+// Function to count positive numbers
+int countPositive(int arr[]) {
+    int count = 0;
+
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] > 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Function to count negative numbers
+int countNegative(int arr[]) {
+    int count = 0;
+
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] < 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Function to count zeros
+int countZero(int arr[]) {
+    int count = 0;
+
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] == 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Function to calculate positive sum
+int positiveSum(int arr[]) {
+    int sum = 0;
+
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] > 0) {
+            sum += arr[i];
+        }
+    }
+    return sum;
+}
+
+// Function to calculate negative sum
+int negativeSum(int arr[]) {
+    int sum = 0;
+
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] < 0) {
+            sum += arr[i];
+        }
+    }
+    return sum;
+}
+
+// Function to calculate average
+double average(int arr[]) {
+    int sum = 0;
+
+    for (int i = 0; i < 5; i++) {
+        sum += arr[i];
+    }
+
+    return sum / 5.0;
+}
+
+// Function to display results
+int displayResults(int p, int n, int z,
+                   int ps, int ns, double avg) {
+
+    cout << "\n===== RESULTS =====" << endl;
+
+    cout << "Positive numbers: " << p << endl;
+    cout << "Negative numbers: " << n << endl;
+    cout << "Zero numbers: " << z << endl;
+    cout << "Sum of positive numbers: " << ps << endl;
+    cout << "Sum of negative numbers: " << ns << endl;
+    cout << "Average of all numbers: " << avg << endl;
+
+    return 0;
+}
+
+int main() {
+    int arr[5];
+
+    cout << "Enter 5 integer numbers:" << endl;
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    displayResults(
+        countPositive(arr),
+        countNegative(arr),
+        countZero(arr),
+        positiveSum(arr),
+        negativeSum(arr),
+        average(arr)
+    );
+
+    return 0;
+}
